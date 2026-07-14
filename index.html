@@ -3,15 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>alofly • Coming Soon</title>
+    <title>AloFly eSIM • Coming Soon</title>
+    <link rel="icon" href="https://support.alofly.io/images/logo-light-mobile.png">
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&amp;family=Space+Grotesk:wght@500;600&amp;display=swap');
-        
-        :root {
-            --primary: #22d3ee;
-        }
         
         body {
             font-family: 'Inter', system_ui, sans-serif;
@@ -20,15 +17,15 @@
         .heading-font {
             font-family: 'Space Grotesk', system_ui, sans-serif;
             font-weight: 600;
-            letter-spacing: -0.025em;
+            letter-spacing: -0.03em;
         }
 
         .chroma-text {
-            background: linear-gradient(90deg, #22d3ee, #6366f1, #a855f7, #22d3ee);
+            background: linear-gradient(90deg, #67e8f9, #6366f1, #c026ff, #67e8f9);
             background-size: 300% 100%;
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
-            animation: chroma-shift 6s ease infinite;
+            animation: chroma-shift 5s ease infinite;
         }
 
         @keyframes chroma-shift {
@@ -37,154 +34,114 @@
         }
 
         .glass {
-            background: rgba(255, 255, 255, 0.05);
+            background: rgba(15, 23, 42, 0.6);
             backdrop-filter: blur(20px);
-            border: 1px solid rgba(255,255,255,0.1);
-        }
-
-        .section-bg {
-            background: radial-gradient(circle at center, #0f172a 0%, #020617 100%);
+            border: 1px solid rgba(148, 163, 184, 0.1);
         }
 
         canvas {
-            filter: drop-shadow(0 0 20px rgba(34, 211, 238, 0.15));
+            filter: drop-shadow(0 25px 50px rgba(103, 232, 249, 0.1));
         }
-
+        
         .airplane {
             position: absolute;
             animation-timing-function: linear;
             animation-iteration-count: infinite;
-        }
-
-        .airplane-1 { animation: fly1 25s linear infinite; }
-        .airplane-2 { animation: fly2 32s linear infinite; }
-        .airplane-3 { animation: fly3 28s linear infinite; }
-
-        @keyframes fly1 {
-            0% { transform: translateX(-150px) translateY(40px); }
-            100% { transform: translateX(calc(100vw + 150px)) translateY(-80px); }
-        }
-        
-        @keyframes fly2 {
-            0% { transform: translateX(-200px) translateY(120px); }
-            100% { transform: translateX(calc(100vw + 200px)) translateY(60px); }
-        }
-        
-        @keyframes fly3 {
-            0% { transform: translateX(-180px) translateY(-30px); }
-            100% { transform: translateX(calc(100vw + 180px)) translateY(90px); }
+            opacity: 0.7;
         }
     </style>
 </head>
 <body class="bg-[#020617] text-white overflow-x-hidden">
-    <!-- Background subtle grid -->
-    <div class="fixed inset-0 bg-[radial-gradient(#1e2937_0.8px,transparent_1px)] bg-[length:4px_4px] opacity-30"></div>
+    <!-- Subtle background -->
+    <div class="fixed inset-0 bg-[radial-gradient(#1e2937_0.6px,transparent_1px)] bg-[length:3px_3px] opacity-40"></div>
 
     <!-- Flying Airplanes -->
-    <div class="fixed inset-0 pointer-events-none z-10">
-        <!-- Airplane 1 -->
-        <div class="airplane airplane-1" style="top: 18%; left: 0; animation-delay: 0s;">
-            <svg width="48" height="24" viewBox="0 0 48 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M42 12L6 12" stroke="#64748b" stroke-width="1.5" stroke-linecap="round"/>
-                <path d="M38 8L42 12L38 16" stroke="#64748b" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                <path d="M10 6L6 12L10 18" stroke="#64748b" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+    <div class="fixed inset-0 pointer-events-none z-10 overflow-hidden">
+        <div class="airplane" style="top: 20%; animation: fly-across 24s linear infinite;">
+            <svg width="58" height="28" viewBox="0 0 64 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M6 16H52" stroke="#64748b" stroke-width="2" stroke-linecap="round"/>
+                <path d="M48 10L54 16L48 22" stroke="#64748b" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M12 10L6 16L12 22" stroke="#64748b" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M30 16L22 6" stroke="#64748b" stroke-width="1.8"/>
+                <path d="M30 16L22 26" stroke="#64748b" stroke-width="1.8"/>
             </svg>
         </div>
         
-        <!-- Airplane 2 -->
-        <div class="airplane airplane-2" style="top: 35%; left: 0; animation-delay: -8s;">
-            <svg width="42" height="21" viewBox="0 0 48 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M42 12L6 12" stroke="#64748b" stroke-width="1.5" stroke-linecap="round"/>
-                <path d="M38 8L42 12L38 16" stroke="#64748b" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+        <div class="airplane" style="top: 45%; animation: fly-across 31s linear infinite; animation-delay: -9s;">
+            <svg width="50" height="25" viewBox="0 0 64 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M6 16H52" stroke="#64748b" stroke-width="1.8" stroke-linecap="round"/>
+                <path d="M48 11L53 16L48 21" stroke="#64748b" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M28 16L20 8" stroke="#64748b" stroke-width="1.5"/>
+                <path d="M28 16L20 24" stroke="#64748b" stroke-width="1.5"/>
             </svg>
         </div>
         
-        <!-- Airplane 3 -->
-        <div class="airplane airplane-3" style="top: 65%; left: 0; animation-delay: -15s;">
-            <svg width="38" height="19" viewBox="0 0 48 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M42 12L6 12" stroke="#64748b" stroke-width="1.5" stroke-linecap="round"/>
-                <path d="M38 8L42 12L38 16" stroke="#64748b" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+        <div class="airplane" style="top: 65%; animation: fly-across 27s linear infinite; animation-delay: -18s;">
+            <svg width="44" height="22" viewBox="0 0 64 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M6 16H52" stroke="#64748b" stroke-width="1.6" stroke-linecap="round"/>
+                <path d="M48 11L53 16L48 21" stroke="#64748b" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
             </svg>
         </div>
     </div>
 
-    <div class="relative z-20 min-h-screen flex items-center justify-center px-6">
-        <div class="max-w-5xl w-full">
+    <div class="relative z-20 min-h-screen flex items-center justify-center px-6 pt-8 pb-16">
+        <div class="max-w-4xl w-full text-center">
             
             <!-- Logo -->
-            <div class="flex justify-center mb-8">
+            <div class="flex justify-center mb-6">
                 <img src="https://support.alofly.io/images/logo-light.png" 
-                     alt="alofly" 
-                     class="h-12 md:h-14 w-auto">
+                     alt="AloFly" 
+                     class="h-11 md:h-12 w-auto">
             </div>
 
-            <!-- Main Content -->
-            <div class="text-center">
-                <div class="inline-flex items-center gap-x-2 px-4 py-1.5 rounded-2xl glass mb-6 border border-white/10">
+            <!-- Green Dot Badge -->
+            <div class="flex justify-center mb-6">
+                <div class="inline-flex items-center gap-x-2 px-4 py-1.5 rounded-2xl glass border border-white/10">
                     <div class="w-2 h-2 bg-emerald-400 rounded-full animate-pulse"></div>
                     <span class="text-sm font-medium tracking-widest text-emerald-400">GLOBAL eSIM NETWORK</span>
                 </div>
+            </div>
 
-                <h1 class="text-6xl md:text-7xl lg:text-8xl font-semibold heading-font tracking-tighter mb-4">
-                    <span class="chroma-text">Stay connected.</span><br>
-                    <span class="text-white">Anywhere.</span>
-                </h1>
-                
-                <p class="max-w-md mx-auto text-xl text-slate-400 mb-10">
-                    Premium global eSIM is launching soon.<br>
-                    Instant connectivity in 200+ countries.
-                </p>
+            <!-- Headline -->
+            <h1 class="text-6xl md:text-7xl lg:text-8xl font-semibold heading-font tracking-[-2.5px] leading-none mb-4">
+                <span class="chroma-text">Global eSIM.</span><br>
+                <span class="text-white">Coming soon.</span>
+            </h1>
+            
+            <p class="max-w-md mx-auto text-xl text-slate-400 mb-10">
+                Instant connectivity in 200+ countries.<br>
+                No roaming. No hassle.
+            </p>
 
-                <!-- Rotating Globe -->
-                <div class="relative flex justify-center mb-12">
-                    <div class="relative">
-                        <canvas id="globe" width="420" height="420" 
-                                class="rounded-full"></canvas>
-                        
-                        <!-- Glow effect behind globe -->
-                        <div class="absolute inset-0 rounded-full bg-cyan-500/10 blur-3xl -z-10 scale-90"></div>
+            <!-- NEW MATRIX-STYLE PULSING GLOBE -->
+            <div class="flex justify-center mb-10">
+                <div class="relative">
+                    <canvas id="globe" width="480" height="480" 
+                            class="rounded-full"></canvas>
+                </div>
+            </div>
+
+            <!-- Notify Section -->
+            <div class="max-w-md mx-auto">
+                <div class="glass rounded-3xl p-8 border border-white/10">
+                    <h3 class="font-semibold text-xl mb-1">Be the first to know</h3>
+                    <p class="text-slate-400 text-sm mb-6">We'll email you when AloFly launches.</p>
+                    
+                    <div class="flex gap-3">
+                        <input type="email" placeholder="your@email.com" 
+                               class="flex-1 bg-white/5 border border-white/20 rounded-2xl px-5 py-3.5 text-sm focus:outline-none focus:border-cyan-400/50 placeholder:text-slate-500">
+                        <button class="px-7 bg-white text-black font-semibold rounded-2xl hover:bg-white/90 transition-all whitespace-nowrap">
+                            Notify me
+                        </button>
                     </div>
                 </div>
-
-                <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
-                    <button onclick="document.getElementById('notify').scrollIntoView({ behavior: 'smooth' })" 
-                            class="px-8 py-4 bg-white text-black font-semibold rounded-2xl hover:bg-white/90 transition-all flex items-center gap-x-2 text-lg">
-                        <i class="fa-solid fa-bell mr-2"></i>
-                        Get notified on launch
-                    </button>
-                    
-                    <a href="#" class="px-8 py-4 border border-white/30 hover:bg-white/5 font-medium rounded-2xl transition-all flex items-center gap-x-2 text-lg">
-                        Learn more
-                    </a>
-                </div>
             </div>
-        </div>
-    </div>
-
-    <!-- Notify Section -->
-    <div id="notify" class="relative z-20 max-w-md mx-auto px-6 pb-16">
-        <div class="glass rounded-3xl p-8 border border-white/10">
-            <h3 class="font-semibold text-xl mb-1 text-center">Be the first to know</h3>
-            <p class="text-slate-400 text-sm text-center mb-6">We'll send you early access when we launch.</p>
             
-            <div class="flex gap-3">
-                <input type="email" placeholder="your@email.com" 
-                       class="flex-1 bg-white/5 border border-white/20 rounded-2xl px-5 py-3.5 text-sm focus:outline-none focus:border-cyan-400/50 placeholder:text-slate-500">
-                <button class="px-7 bg-white text-black font-semibold rounded-2xl hover:bg-white/90 transition-all whitespace-nowrap">
-                    Notify me
-                </button>
-            </div>
         </div>
     </div>
 
     <script>
-        // Tailwind script
-        function initializeTailwind() {
-            document.documentElement.style.setProperty('--accent', '#22d3ee');
-        }
-
-        // === ROTATING DOT GLOBE ===
-        function createGlobe() {
+        function createMatrixGlobe() {
             const canvas = document.getElementById('globe');
             const ctx = canvas.getContext('2d');
             
@@ -192,24 +149,27 @@
             const height = canvas.height;
             const centerX = width / 2;
             const centerY = height / 2;
-            const radius = 160;
+            const radius = 185;
 
             let points = [];
-            const numPoints = 420;
+            const numPoints = 920;
             let rotation = 0;
+            let time = 0;
 
             // Generate points on sphere
             function generatePoints() {
                 points = [];
                 for (let i = 0; i < numPoints; i++) {
-                    const phi = Math.acos(2 * Math.random() - 1);
-                    const theta = 2 * Math.PI * Math.random();
-                    
+                    const u = Math.random();
+                    const v = Math.random();
+                    const theta = 2 * Math.PI * u;
+                    const phi = Math.acos(2 * v - 1);
+
                     points.push({
                         x: radius * Math.sin(phi) * Math.cos(theta),
                         y: radius * Math.sin(phi) * Math.sin(theta),
                         z: radius * Math.cos(phi),
-                        size: Math.random() * 1.8 + 1.2
+                        baseSize: Math.random() * 1.6 + 1.0
                     });
                 }
             }
@@ -217,78 +177,114 @@
             generatePoints();
 
             function project(x, y, z) {
-                const scale = 280 / (280 + z);
+                const scale = 320 / (320 + z);
                 return {
                     x: centerX + x * scale,
                     y: centerY + y * scale,
-                    scale: scale
+                    scale: scale,
+                    z: z
                 };
             }
 
             function draw() {
                 ctx.clearRect(0, 0, width, height);
-                
-                // Subtle background circle
-                ctx.strokeStyle = 'rgba(148, 163, 184, 0.08)';
+                time += 0.016;
+
+                // Subtle sphere outline
+                ctx.strokeStyle = 'rgba(60, 60, 90, 0.15)';
                 ctx.lineWidth = 1;
                 ctx.beginPath();
                 ctx.arc(centerX, centerY, radius, 0, Math.PI * 2);
                 ctx.stroke();
 
-                // Sort points by z for proper depth
-                const sortedPoints = [...points].sort((a, b) => b.z - a.z);
+                const cos = Math.cos(rotation);
+                const sin = Math.sin(rotation);
 
-                for (let point of sortedPoints) {
+                const sortedPoints = [];
+
+                for (let p of points) {
                     // Rotate around Y axis
-                    const cos = Math.cos(rotation);
-                    const sin = Math.sin(rotation);
-                    
-                    const x = point.x * cos - point.z * sin;
-                    const z = point.x * sin + point.z * cos;
-                    const y = point.y;
+                    let x = p.x * cos - p.z * sin;
+                    let z = p.x * sin + p.z * cos;
+                    let y = p.y;
 
                     const projected = project(x, y, z);
-                    
-                    const alpha = (z + radius) / (radius * 2);
-                    const size = point.size * projected.scale * 0.9;
+                    projected.baseSize = p.baseSize;
+                    projected.originalX = x; // for color gradient
+                    sortedPoints.push(projected);
+                }
 
-                    // Dot
-                    ctx.fillStyle = `rgba(103, 232, 249, ${0.6 + alpha * 0.4})`;
+                sortedPoints.sort((a, b) => b.z - a.z);
+
+                // Draw connecting lines (matrix feel)
+                ctx.strokeStyle = 'rgba(180, 120, 255, 0.06)';
+                ctx.lineWidth = 0.6;
+
+                for (let i = 0; i < sortedPoints.length; i++) {
+                    for (let j = i + 1; j < sortedPoints.length; j++) {
+                        const p1 = sortedPoints[i];
+                        const p2 = sortedPoints[j];
+                        const dx = p1.x - p2.x;
+                        const dy = p1.y - p2.y;
+                        const dist = Math.sqrt(dx * dx + dy * dy);
+
+                        if (dist < 48 && p1.z > -30 && p2.z > -30) {
+                            ctx.beginPath();
+                            ctx.moveTo(p1.x, p1.y);
+                            ctx.lineTo(p2.x, p2.y);
+                            ctx.stroke();
+                        }
+                    }
+                }
+
+                // Draw pulsing dots with color gradient
+                for (let p of sortedPoints) {
+                    const depthAlpha = Math.max(0.2, (p.z + radius) / (radius * 1.7));
+                    
+                    // Pulsing effect
+                    const pulse = Math.sin(time * 2.5 + p.originalX * 0.02) * 0.35 + 1;
+                    const size = p.baseSize * p.scale * pulse * 0.95;
+
+                    // Color gradient (left = purple/pink, right = orange/yellow)
+                    const colorShift = (p.originalX + radius) / (radius * 2); // 0 to 1
+                    let r, g, b;
+
+                    if (colorShift < 0.5) {
+                        // Purple to Pink
+                        r = 180 + colorShift * 80;
+                        g = 80 + colorShift * 60;
+                        b = 220;
+                    } else {
+                        // Pink to Orange/Yellow
+                        r = 220;
+                        g = 100 + (colorShift - 0.5) * 140;
+                        b = 180 - (colorShift - 0.5) * 140;
+                    }
+
+                    ctx.fillStyle = `rgba(${r}, ${g}, ${b}, ${depthAlpha})`;
                     ctx.beginPath();
-                    ctx.arc(projected.x, projected.y, size, 0, Math.PI * 2);
+                    ctx.arc(p.x, p.y, size, 0, Math.PI * 2);
                     ctx.fill();
 
-                    // Add subtle glow to front dots
-                    if (z > 0) {
-                        ctx.fillStyle = `rgba(103, 232, 249, ${alpha * 0.3})`;
+                    // Extra glow on front dots
+                    if (p.z > 10) {
+                        ctx.fillStyle = `rgba(${r}, ${g}, ${b}, ${depthAlpha * 0.25})`;
                         ctx.beginPath();
-                        ctx.arc(projected.x, projected.y, size * 2.5, 0, Math.PI * 2);
+                        ctx.arc(p.x, p.y, size * 2.8, 0, Math.PI * 2);
                         ctx.fill();
                     }
                 }
 
-                rotation += 0.0025; // Rotation speed
+                rotation += 0.0016;
                 requestAnimationFrame(draw);
             }
 
             draw();
-            
-            // Pause rotation on hover
-            canvas.addEventListener('mouseenter', () => {
-                canvas.style.transition = 'filter 0.3s';
-            });
         }
 
-        // Initialize everything
-        function init() {
-            initializeTailwind();
-            createGlobe();
-            
-            // Optional: Make airplanes slightly more visible
-            console.log('%c[alofly] Premium coming soon page loaded', 'color:#64748b');
+        window.onload = function() {
+            createMatrixGlobe();
         }
-
-        window.onload = init;
     </script>
 </body>
 </html>
