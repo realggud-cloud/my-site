@@ -6,7 +6,6 @@
     <title>AloFly eSIM • Coming Soon</title>
     <link rel="icon" href="https://support.alofly.io/images/logo-light-mobile.png">
     <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&amp;family=Space+Grotesk:wght@500;600&amp;display=swap');
         
@@ -38,16 +37,12 @@
             backdrop-filter: blur(20px);
             border: 1px solid rgba(148, 163, 184, 0.1);
         }
-
-        canvas {
-            filter: drop-shadow(0 25px 50px rgba(103, 232, 249, 0.1));
-        }
         
         .airplane {
             position: absolute;
             animation-timing-function: linear;
             animation-iteration-count: infinite;
-            opacity: 0.7;
+            opacity: 0.65;
         }
     </style>
 </head>
@@ -55,31 +50,49 @@
     <!-- Subtle background -->
     <div class="fixed inset-0 bg-[radial-gradient(#1e2937_0.6px,transparent_1px)] bg-[length:3px_3px] opacity-40"></div>
 
-    <!-- Flying Airplanes -->
+    <!-- Real Flying Airplanes -->
     <div class="fixed inset-0 pointer-events-none z-10 overflow-hidden">
-        <div class="airplane" style="top: 20%; animation: fly-across 24s linear infinite;">
-            <svg width="58" height="28" viewBox="0 0 64 32" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M6 16H52" stroke="#64748b" stroke-width="2" stroke-linecap="round"/>
-                <path d="M48 10L54 16L48 22" stroke="#64748b" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                <path d="M12 10L6 16L12 22" stroke="#64748b" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                <path d="M30 16L22 6" stroke="#64748b" stroke-width="1.8"/>
-                <path d="M30 16L22 26" stroke="#64748b" stroke-width="1.8"/>
+        
+        <!-- Airplane 1 -->
+        <div class="airplane" style="top: 18%; animation: fly-across 26s linear infinite;">
+            <svg width="72" height="32" viewBox="0 0 72 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <!-- Fuselage -->
+                <path d="M8 16 L62 16" stroke="#64748b" stroke-width="2.5" stroke-linecap="round"/>
+                <!-- Nose -->
+                <path d="M62 16 L68 16" stroke="#64748b" stroke-width="2"/>
+                <!-- Tail -->
+                <path d="M10 16 L4 10" stroke="#64748b" stroke-width="2"/>
+                <path d="M10 16 L4 22" stroke="#64748b" stroke-width="2"/>
+                <!-- Main Wings -->
+                <path d="M35 16 L22 6" stroke="#64748b" stroke-width="2.5"/>
+                <path d="M35 16 L22 26" stroke="#64748b" stroke-width="2.5"/>
+                <!-- Wing tips -->
+                <path d="M22 6 L18 8" stroke="#64748b" stroke-width="1.5"/>
+                <path d="M22 26 L18 24" stroke="#64748b" stroke-width="1.5"/>
             </svg>
         </div>
         
-        <div class="airplane" style="top: 45%; animation: fly-across 31s linear infinite; animation-delay: -9s;">
-            <svg width="50" height="25" viewBox="0 0 64 32" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M6 16H52" stroke="#64748b" stroke-width="1.8" stroke-linecap="round"/>
-                <path d="M48 11L53 16L48 21" stroke="#64748b" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
-                <path d="M28 16L20 8" stroke="#64748b" stroke-width="1.5"/>
-                <path d="M28 16L20 24" stroke="#64748b" stroke-width="1.5"/>
+        <!-- Airplane 2 -->
+        <div class="airplane" style="top: 42%; animation: fly-across 33s linear infinite; animation-delay: -11s;">
+            <svg width="64" height="28" viewBox="0 0 72 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M8 16 L62 16" stroke="#64748b" stroke-width="2.2" stroke-linecap="round"/>
+                <path d="M62 16 L67 16" stroke="#64748b" stroke-width="2"/>
+                <path d="M10 16 L5 11" stroke="#64748b" stroke-width="2"/>
+                <path d="M10 16 L5 21" stroke="#64748b" stroke-width="2"/>
+                <path d="M34 16 L23 7" stroke="#64748b" stroke-width="2.2"/>
+                <path d="M34 16 L23 25" stroke="#64748b" stroke-width="2.2"/>
             </svg>
         </div>
         
-        <div class="airplane" style="top: 65%; animation: fly-across 27s linear infinite; animation-delay: -18s;">
-            <svg width="44" height="22" viewBox="0 0 64 32" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M6 16H52" stroke="#64748b" stroke-width="1.6" stroke-linecap="round"/>
-                <path d="M48 11L53 16L48 21" stroke="#64748b" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+        <!-- Airplane 3 -->
+        <div class="airplane" style="top: 62%; animation: fly-across 29s linear infinite; animation-delay: -19s;">
+            <svg width="58" height="26" viewBox="0 0 72 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M8 16 L62 16" stroke="#64748b" stroke-width="2" stroke-linecap="round"/>
+                <path d="M62 16 L66 16" stroke="#64748b" stroke-width="1.8"/>
+                <path d="M10 16 L6 12" stroke="#64748b" stroke-width="1.8"/>
+                <path d="M10 16 L6 20" stroke="#64748b" stroke-width="1.8"/>
+                <path d="M33 16 L24 8" stroke="#64748b" stroke-width="2"/>
+                <path d="M33 16 L24 24" stroke="#64748b" stroke-width="2"/>
             </svg>
         </div>
     </div>
@@ -113,30 +126,14 @@
                 No roaming. No hassle.
             </p>
 
-            <!-- NEW MATRIX-STYLE PULSING GLOBE -->
-            <div class="flex justify-center mb-10">
+            <!-- Matrix Pulsing Globe -->
+            <div class="flex justify-center">
                 <div class="relative">
                     <canvas id="globe" width="480" height="480" 
                             class="rounded-full"></canvas>
                 </div>
             </div>
 
-            <!-- Notify Section -->
-            <div class="max-w-md mx-auto">
-                <div class="glass rounded-3xl p-8 border border-white/10">
-                    <h3 class="font-semibold text-xl mb-1">Be the first to know</h3>
-                    <p class="text-slate-400 text-sm mb-6">We'll email you when AloFly launches.</p>
-                    
-                    <div class="flex gap-3">
-                        <input type="email" placeholder="your@email.com" 
-                               class="flex-1 bg-white/5 border border-white/20 rounded-2xl px-5 py-3.5 text-sm focus:outline-none focus:border-cyan-400/50 placeholder:text-slate-500">
-                        <button class="px-7 bg-white text-black font-semibold rounded-2xl hover:bg-white/90 transition-all whitespace-nowrap">
-                            Notify me
-                        </button>
-                    </div>
-                </div>
-            </div>
-            
         </div>
     </div>
 
@@ -156,7 +153,6 @@
             let rotation = 0;
             let time = 0;
 
-            // Generate points on sphere
             function generatePoints() {
                 points = [];
                 for (let i = 0; i < numPoints; i++) {
@@ -190,7 +186,6 @@
                 ctx.clearRect(0, 0, width, height);
                 time += 0.016;
 
-                // Subtle sphere outline
                 ctx.strokeStyle = 'rgba(60, 60, 90, 0.15)';
                 ctx.lineWidth = 1;
                 ctx.beginPath();
@@ -203,20 +198,18 @@
                 const sortedPoints = [];
 
                 for (let p of points) {
-                    // Rotate around Y axis
                     let x = p.x * cos - p.z * sin;
                     let z = p.x * sin + p.z * cos;
                     let y = p.y;
 
                     const projected = project(x, y, z);
                     projected.baseSize = p.baseSize;
-                    projected.originalX = x; // for color gradient
+                    projected.originalX = x;
                     sortedPoints.push(projected);
                 }
 
                 sortedPoints.sort((a, b) => b.z - a.z);
 
-                // Draw connecting lines (matrix feel)
                 ctx.strokeStyle = 'rgba(180, 120, 255, 0.06)';
                 ctx.lineWidth = 0.6;
 
@@ -237,25 +230,19 @@
                     }
                 }
 
-                // Draw pulsing dots with color gradient
                 for (let p of sortedPoints) {
                     const depthAlpha = Math.max(0.2, (p.z + radius) / (radius * 1.7));
-                    
-                    // Pulsing effect
                     const pulse = Math.sin(time * 2.5 + p.originalX * 0.02) * 0.35 + 1;
                     const size = p.baseSize * p.scale * pulse * 0.95;
 
-                    // Color gradient (left = purple/pink, right = orange/yellow)
-                    const colorShift = (p.originalX + radius) / (radius * 2); // 0 to 1
+                    const colorShift = (p.originalX + radius) / (radius * 2);
                     let r, g, b;
 
                     if (colorShift < 0.5) {
-                        // Purple to Pink
                         r = 180 + colorShift * 80;
                         g = 80 + colorShift * 60;
                         b = 220;
                     } else {
-                        // Pink to Orange/Yellow
                         r = 220;
                         g = 100 + (colorShift - 0.5) * 140;
                         b = 180 - (colorShift - 0.5) * 140;
@@ -266,7 +253,6 @@
                     ctx.arc(p.x, p.y, size, 0, Math.PI * 2);
                     ctx.fill();
 
-                    // Extra glow on front dots
                     if (p.z > 10) {
                         ctx.fillStyle = `rgba(${r}, ${g}, ${b}, ${depthAlpha * 0.25})`;
                         ctx.beginPath();
