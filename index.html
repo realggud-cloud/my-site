@@ -37,64 +37,56 @@
             backdrop-filter: blur(20px);
             border: 1px solid rgba(148, 163, 184, 0.1);
         }
-        
-        .airplane {
+
+        .plane {
             position: absolute;
+            font-size: 28px;
+            z-index: 10;
+            user-select: none;
             animation-timing-function: linear;
             animation-iteration-count: infinite;
-            opacity: 0.65;
+        }
+
+        /* Different flight paths */
+        .plane-1 { animation: fly1 22s linear infinite; }
+        .plane-2 { animation: fly2 29s linear infinite; }
+        .plane-3 { animation: fly3 25s linear infinite; }
+        .plane-4 { animation: fly4 31s linear infinite; }
+        .plane-5 { animation: fly5 27s linear infinite; }
+
+        @keyframes fly1 {
+            0% { transform: translateX(-120px) translateY(0px); }
+            100% { transform: translateX(calc(100vw + 120px)) translateY(40px); }
+        }
+        @keyframes fly2 {
+            0% { transform: translateX(-100px) translateY(30px); }
+            100% { transform: translateX(calc(100vw + 100px)) translateY(-25px); }
+        }
+        @keyframes fly3 {
+            0% { transform: translateX(-130px) translateY(-20px); }
+            100% { transform: translateX(calc(100vw + 130px)) translateY(35px); }
+        }
+        @keyframes fly4 {
+            0% { transform: translateX(-90px) translateY(50px); }
+            100% { transform: translateX(calc(100vw + 90px)) translateY(-15px); }
+        }
+        @keyframes fly5 {
+            0% { transform: translateX(-110px) translateY(10px); }
+            100% { transform: translateX(calc(100vw + 110px)) translateY(45px); }
         }
     </style>
 </head>
 <body class="bg-[#020617] text-white overflow-x-hidden">
-    <!-- Subtle background -->
+    <!-- Background -->
     <div class="fixed inset-0 bg-[radial-gradient(#1e2937_0.6px,transparent_1px)] bg-[length:3px_3px] opacity-40"></div>
 
-    <!-- Real Flying Airplanes -->
-    <div class="fixed inset-0 pointer-events-none z-10 overflow-hidden">
-        
-        <!-- Airplane 1 -->
-        <div class="airplane" style="top: 18%; animation: fly-across 26s linear infinite;">
-            <svg width="72" height="32" viewBox="0 0 72 32" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <!-- Fuselage -->
-                <path d="M8 16 L62 16" stroke="#64748b" stroke-width="2.5" stroke-linecap="round"/>
-                <!-- Nose -->
-                <path d="M62 16 L68 16" stroke="#64748b" stroke-width="2"/>
-                <!-- Tail -->
-                <path d="M10 16 L4 10" stroke="#64748b" stroke-width="2"/>
-                <path d="M10 16 L4 22" stroke="#64748b" stroke-width="2"/>
-                <!-- Main Wings -->
-                <path d="M35 16 L22 6" stroke="#64748b" stroke-width="2.5"/>
-                <path d="M35 16 L22 26" stroke="#64748b" stroke-width="2.5"/>
-                <!-- Wing tips -->
-                <path d="M22 6 L18 8" stroke="#64748b" stroke-width="1.5"/>
-                <path d="M22 26 L18 24" stroke="#64748b" stroke-width="1.5"/>
-            </svg>
-        </div>
-        
-        <!-- Airplane 2 -->
-        <div class="airplane" style="top: 42%; animation: fly-across 33s linear infinite; animation-delay: -11s;">
-            <svg width="64" height="28" viewBox="0 0 72 32" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M8 16 L62 16" stroke="#64748b" stroke-width="2.2" stroke-linecap="round"/>
-                <path d="M62 16 L67 16" stroke="#64748b" stroke-width="2"/>
-                <path d="M10 16 L5 11" stroke="#64748b" stroke-width="2"/>
-                <path d="M10 16 L5 21" stroke="#64748b" stroke-width="2"/>
-                <path d="M34 16 L23 7" stroke="#64748b" stroke-width="2.2"/>
-                <path d="M34 16 L23 25" stroke="#64748b" stroke-width="2.2"/>
-            </svg>
-        </div>
-        
-        <!-- Airplane 3 -->
-        <div class="airplane" style="top: 62%; animation: fly-across 29s linear infinite; animation-delay: -19s;">
-            <svg width="58" height="26" viewBox="0 0 72 32" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M8 16 L62 16" stroke="#64748b" stroke-width="2" stroke-linecap="round"/>
-                <path d="M62 16 L66 16" stroke="#64748b" stroke-width="1.8"/>
-                <path d="M10 16 L6 12" stroke="#64748b" stroke-width="1.8"/>
-                <path d="M10 16 L6 20" stroke="#64748b" stroke-width="1.8"/>
-                <path d="M33 16 L24 8" stroke="#64748b" stroke-width="2"/>
-                <path d="M33 16 L24 24" stroke="#64748b" stroke-width="2"/>
-            </svg>
-        </div>
+    <!-- Flying Airplane Emojis -->
+    <div class="fixed inset-0 pointer-events-none z-10">
+        <div class="plane plane-1" style="top: 15%; left: 0; animation-delay: 0s;">✈️</div>
+        <div class="plane plane-2" style="top: 28%; left: 0; animation-delay: -6s; font-size: 24px;">🛫</div>
+        <div class="plane plane-3" style="top: 52%; left: 0; animation-delay: -14s;">🛩️</div>
+        <div class="plane plane-4" style="top: 68%; left: 0; animation-delay: -21s; font-size: 26px;">✈️</div>
+        <div class="plane plane-5" style="top: 38%; left: 0; animation-delay: -9s;">🛫</div>
     </div>
 
     <div class="relative z-20 min-h-screen flex items-center justify-center px-6 pt-8 pb-16">
@@ -121,10 +113,26 @@
                 <span class="text-white">Coming soon.</span>
             </h1>
             
-            <p class="max-w-md mx-auto text-xl text-slate-400 mb-10">
+            <p class="max-w-md mx-auto text-xl text-slate-400 mb-8">
                 Instant connectivity in 200+ countries.<br>
                 No roaming. No hassle.
             </p>
+
+            <!-- Trust signals (eSIM style) -->
+            <div class="flex flex-wrap justify-center gap-x-6 gap-y-2 mb-10 text-sm text-slate-400">
+                <div class="flex items-center gap-x-2">
+                    <span class="text-emerald-400">●</span> 
+                    <span>200+ Countries</span>
+                </div>
+                <div class="flex items-center gap-x-2">
+                    <span class="text-emerald-400">●</span> 
+                    <span>Instant Activation</span>
+                </div>
+                <div class="flex items-center gap-x-2">
+                    <span class="text-emerald-400">●</span> 
+                    <span>24/7 Support</span>
+                </div>
+            </div>
 
             <!-- Matrix Pulsing Globe -->
             <div class="flex justify-center">
